@@ -221,7 +221,9 @@ export default function ContactPage() {
               </div>
               <h3 className="mt-4 font-semibold text-neutral-900">Email Us</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Email address will be provided soon
+                <a href="mailto:info@foreverinyourmemory.com" className="text-amber-600 hover:text-amber-700 transition">
+                  info@foreverinyourmemory.com
+                </a>
               </p>
             </div>
 
@@ -243,7 +245,9 @@ export default function ContactPage() {
               </div>
               <h3 className="mt-4 font-semibold text-neutral-900">Call Us</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Phone number will be provided soon
+                <a href="tel:7322976008" className="text-amber-600 hover:text-amber-700 transition">
+                  (732) 297-6008
+                </a>
               </p>
             </div>
 

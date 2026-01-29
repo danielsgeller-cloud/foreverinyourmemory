@@ -187,6 +187,21 @@ export default function Home() {
             <p className="mt-2 text-sm">
               Serving families with compassion and dedication
             </p>
+
+            {/* Contact Information */}
+            <div className="mt-6 space-y-2">
+              <p className="text-sm">
+                <a href="tel:7322976008" className="text-amber-500 hover:text-amber-400 transition">
+                  (732) 297-6008
+                </a>
+              </p>
+              <p className="text-sm">
+                <a href="mailto:info@foreverinyourmemory.com" className="text-amber-500 hover:text-amber-400 transition">
+                  info@foreverinyourmemory.com
+                </a>
+              </p>
+            </div>
+
             <div className="mt-6">
               <Link
                 href="/contact"
