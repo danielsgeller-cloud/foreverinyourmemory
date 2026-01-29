@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Forever In Your Memory - Monument Dealer Website
+
+A beautiful, professional website for a monument dealer business.
+
+## Features
+
+- **Elegant Homepage** with hero section, about section, services showcase
+- **Contact Form** for customers to reach out
+- **Responsive Design** looks great on all devices
+- **Beautiful Images** from memorial landscapes
+- **Professional Typography** with clean, readable fonts
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000) (or port 3001 if 3000 is in use)
+
+## Pages
+
+- **Home (`/`)** - Main landing page with hero, about, services, and CTA sections
+- **Contact (`/contact`)** - Contact form for inquiries
+
+## To Do
+
+- [ ] Set up email functionality for the contact form
+- [ ] Add actual contact information (email, phone, address)
+- [ ] Customize business hours if needed
+- [ ] Add more images or replace placeholder images
+- [ ] Set up deployment (Vercel, Netlify, AWS Amplify, etc.)
+
+## Email Setup (Coming Soon)
+
+The contact form is ready but needs an email backend. You'll need to:
+1. Set up an email service (like SendGrid, AWS SES, or nodemailer with Gmail)
+2. Create an API route at `/app/api/contact/route.ts`
+3. Update the form submission handler in `/app/contact/page.tsx`
+
+## Customization
+
+- **Colors:** Edit the Tailwind classes throughout the components (currently using amber accent)
+- **Images:** Replace images in `/public/` directory
+- **Content:** Edit text directly in the page components
+- **Styling:** Modify global styles in `/app/globals.css`
+
+## Built With
+
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Vercel Geist Font** - Typography
+
+## Project Structure
+
+```
+foreverinyourmemory/
+├── app/
+│   ├── contact/
+│   │   └── page.tsx          # Contact form page
+│   ├── layout.tsx             # Root layout with metadata
+│   ├── page.tsx               # Homepage
+│   └── globals.css            # Global styles
+├── public/
+│   ├── field-hero.jpg         # Hero image
+│   ├── field-sunset-wide.jpg  # Sunset background
+│   ├── contact-headstone-flowers.jpg
+│   └── field-soft-repeat.jpg
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Forever In Your Memory** - Honoring Lives, Preserving Legacies
