@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "siteName": "Forever In Your Memory",
+    "gallery": "Gallery",
+    "contact": "Contact Us"
+  },
+  "home": {
+    "about": {
+      "title": "Creating Lasting Tributes",
+      "paragraph1": "For over three decades, Forever In Your Memory has been serving families with compassion and dedication. We understand that selecting a memorial is one of the most important decisions you'll make in honoring a loved one.",
+      "paragraph2": "Our experienced team works closely with you to create personalized monuments that reflect the unique life and legacy of those you cherish. From traditional headstones to custom designs, we ensure every detail meets your vision.",
+      "imageAlt": "Custom memorial monument with portrait engravings"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "We offer a comprehensive range of memorial products and services to honor your loved ones",
+      "customMonuments": {
+        "title": "Custom Monuments",
+        "description": "Personalized granite and marble monuments designed to your specifications, from traditional upright headstones to flat markers and more."
+      },
+      "memorialPortraits": {
+        "title": "Memorial Portraits",
+        "description": "High-quality ceramic photo medallions that preserve cherished memories with lasting durability for outdoor installation."
+      },
+      "engraving": {
+        "title": "Engraving & Design",
+        "description": "Expert engraving services including inscriptions, artwork, religious symbols, and custom designs to personalize your memorial."
+      },
+      "cemeteryServices": {
+        "title": "Cemetery Services",
+        "description": "Installation coordination and cemetery plot services to ensure proper placement and compliance with cemetery regulations."
+      },
+      "consultation": {
+        "title": "Consultation",
+        "description": "Compassionate guidance through the selection process, helping you choose the perfect memorial within your budget."
+      },
+      "servicesImageAlt": "Our Services and Contact Information",
+      "viewGallery": "View Our Gallery"
+    },
+    "cta": {
+      "title": "Let Us Help You Honor Your Loved One",
+      "subtitle": "Our caring team is here to guide you through every step of creating a beautiful and lasting memorial.",
+      "button": "Get in Touch",
+      "imageAlt": "Peaceful memorial landscape"
+    }
+  },
+  "footer": {
+    "tagline": "Serving families with compassion and dedication",
+    "copyright": "Forever In Your Memory. All rights reserved."
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "We're here to help you honor your loved one"
+    },
+    "form": {
+      "title": "Get In Touch",
+      "subtitle": "Fill out the form below and we'll get back to you as soon as possible",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "message": "Message",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "(555) 555-5555",
+      "messagePlaceholder": "Tell us how we can help you...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "successTitle": "Thank you for contacting us!",
+      "successMessage": "We've received your message and will respond shortly.",
+      "errorTitle": "Error",
+      "required": "*"
+    },
+    "info": {
+      "emailTitle": "Email Us",
+      "callTitle": "Call Us",
+      "hoursTitle": "Hours",
+      "hoursText": "Monday - Friday: 9:00 AM - 5:00 PM\nSaturday: By Appointment"
+    },
+    "backToHome": "Back to Home"
+  },
+  "gallery": {
+    "backToHome": "Back to Home",
+    "title": "Our Work",
+    "subtitle": "Browse our gallery of custom monuments and memorials. Each piece is crafted with care and precision to honor your loved ones.",
+    "cta": {
+      "title": "Ready to Create a Memorial?",
+      "subtitle": "Contact us to discuss your vision and learn more about our custom monument options."
+    }
+  }
+}

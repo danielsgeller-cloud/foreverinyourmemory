@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getTranslations } from 'next-intl/server';
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations('home');
+  const tNav = await getTranslations('nav');
+  const tFooter = await getTranslations('footer');
+
   return (
     <main className="min-h-screen bg-white">
       {/* About Section */}
@@ -10,23 +16,19 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div>
               <h2 className="font-serif text-3xl font-semibold text-neutral-900 md:text-4xl">
-                Creating Lasting Tributes
+                {t('about.title')}
               </h2>
               <p className="mt-6 text-base leading-relaxed text-neutral-700">
-                For over three decades, Forever In Your Memory has been serving families
-                with compassion and dedication. We understand that selecting a memorial
-                is one of the most important decisions you'll make in honoring a loved one.
+                {t('about.paragraph1')}
               </p>
               <p className="mt-4 text-base leading-relaxed text-neutral-700">
-                Our experienced team works closely with you to create personalized monuments
-                that reflect the unique life and legacy of those you cherish. From traditional
-                headstones to custom designs, we ensure every detail meets your vision.
+                {t('about.paragraph2')}
               </p>
             </div>
             <div className="relative h-80 overflow-hidden rounded-lg shadow-xl md:h-96">
               <Image
                 src="/1000072571.jpg"
-                alt="Custom memorial monument with portrait engravings"
+                alt={t('about.imageAlt')}
                 fill
                 className="object-cover"
               />
@@ -39,60 +41,55 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-center font-serif text-3xl font-semibold text-neutral-900 md:text-4xl">
-            Our Services
+            {t('services.title')}
           </h2>
           <p className="mt-4 text-center text-neutral-600 max-w-2xl mx-auto">
-            We offer a comprehensive range of memorial products and services to honor your loved ones
+            {t('services.subtitle')}
           </p>
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-neutral-900">
-                Custom Monuments
+                {t('services.customMonuments.title')}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                Personalized granite and marble monuments designed to your specifications,
-                from traditional upright headstones to flat markers and more.
+                {t('services.customMonuments.description')}
               </p>
             </div>
 
             <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-neutral-900">
-                Memorial Portraits
+                {t('services.memorialPortraits.title')}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                High-quality ceramic photo medallions that preserve cherished memories
-                with lasting durability for outdoor installation.
+                {t('services.memorialPortraits.description')}
               </p>
             </div>
 
             <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-neutral-900">
-                Engraving & Design
+                {t('services.engraving.title')}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                Expert engraving services including inscriptions, artwork, religious symbols,
-                and custom designs to personalize your memorial.
+                {t('services.engraving.description')}
               </p>
             </div>
 
             <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-neutral-900">
-                Cemetery Services
+                {t('services.cemeteryServices.title')}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                Installation coordination and cemetery plot services to ensure proper
-                placement and compliance with cemetery regulations.
+                {t('services.cemeteryServices.description')}
               </p>
             </div>
 
             <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-neutral-900">
-                Consultation
+                {t('services.consultation.title')}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                Compassionate guidance through the selection process, helping you
-                choose the perfect memorial within your budget.
+                {t('services.consultation.description')}
               </p>
             </div>
           </div>
@@ -101,7 +98,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-lg shadow-lg">
               <Image
                 src="/FB_IMG_1707660593203.jpg"
-                alt="Our Services and Contact Information"
+                alt={t('services.servicesImageAlt')}
                 width={600}
                 height={800}
                 className="w-full h-auto"
@@ -111,10 +108,10 @@ export default function Home() {
 
           <div className="mt-12 text-center">
             <Link
-              href="/gallery"
+              href={`/${locale}/gallery`}
               className="inline-block rounded-full border-2 border-amber-500 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-amber-600 transition hover:bg-amber-500 hover:text-white"
             >
-              View Our Gallery
+              {t('services.viewGallery')}
             </Link>
           </div>
         </div>
@@ -125,7 +122,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="/1000081828.jpg"
-            alt="Peaceful memorial landscape"
+            alt={t('cta.imageAlt')}
             fill
             className="object-cover"
           />
@@ -134,18 +131,17 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-white">
           <h2 className="font-serif text-3xl font-semibold md:text-4xl">
-            Let Us Help You Honor Your Loved One
+            {t('cta.title')}
           </h2>
           <p className="mt-4 text-lg text-neutral-100">
-            Our caring team is here to guide you through every step of creating
-            a beautiful and lasting memorial.
+            {t('cta.subtitle')}
           </p>
           <div className="mt-8">
             <Link
-              href="/contact"
+              href={`/${locale}/contact`}
               className="inline-block rounded-full bg-amber-500 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-black shadow-lg transition hover:bg-amber-400"
             >
-              Get in Touch
+              {t('cta.button')}
             </Link>
           </div>
         </div>
@@ -156,10 +152,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h3 className="font-serif text-2xl font-semibold text-white">
-              Forever In Your Memory
+              {tNav('siteName')}
             </h3>
             <p className="mt-2 text-sm">
-              Serving families with compassion and dedication
+              {tFooter('tagline')}
             </p>
 
             {/* Contact Information */}
@@ -178,15 +174,15 @@ export default function Home() {
 
             <div className="mt-6">
               <Link
-                href="/contact"
+                href={`/${locale}/contact`}
                 className="text-amber-500 hover:text-amber-400 transition"
               >
-                Contact Us
+                {tNav('contact')}
               </Link>
             </div>
           </div>
           <div className="mt-8 border-t border-neutral-800 pt-8 text-center text-xs">
-            <p>&copy; {new Date().getFullYear()} Forever In Your Memory. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {tFooter('copyright')}</p>
           </div>
         </div>
       </footer>

@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getTranslations } from 'next-intl/server';
 
-export default function Gallery() {
+export default async function Gallery({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations('gallery');
+  const tNav = await getTranslations('nav');
+  const tFooter = await getTranslations('footer');
+
   const monuments = [
     {
       src: "/1000072571.jpg",
@@ -79,17 +85,16 @@ export default function Gallery() {
       <section className="bg-neutral-900 py-16 text-white">
         <div className="mx-auto max-w-6xl px-6">
           <Link
-            href="/"
+            href={`/${locale}`}
             className="mb-6 inline-block text-amber-500 hover:text-amber-400 transition"
           >
-            ← Back to Home
+            ← {t('backToHome')}
           </Link>
           <h1 className="font-serif text-4xl font-bold md:text-5xl">
-            Our Work
+            {t('title')}
           </h1>
           <p className="mt-4 text-lg text-neutral-300 max-w-3xl">
-            Browse our gallery of custom monuments and memorials. Each piece is
-            crafted with care and precision to honor your loved ones.
+            {t('subtitle')}
           </p>
         </div>
       </section>
@@ -121,18 +126,17 @@ export default function Gallery() {
       <section className="bg-neutral-50 py-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="font-serif text-3xl font-semibold text-neutral-900 md:text-4xl">
-            Ready to Create a Memorial?
+            {t('cta.title')}
           </h2>
           <p className="mt-4 text-neutral-700">
-            Contact us to discuss your vision and learn more about our custom
-            monument options.
+            {t('cta.subtitle')}
           </p>
           <div className="mt-8">
             <Link
-              href="/contact"
+              href={`/${locale}/contact`}
               className="inline-block rounded-full bg-amber-500 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-black shadow-lg transition hover:bg-amber-400"
             >
-              Contact Us
+              {tNav('contact')}
             </Link>
           </div>
         </div>
@@ -143,10 +147,10 @@ export default function Gallery() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h3 className="font-serif text-2xl font-semibold text-white">
-              Forever In Your Memory
+              {tNav('siteName')}
             </h3>
             <p className="mt-2 text-sm">
-              Serving families with compassion and dedication
+              {tFooter('tagline')}
             </p>
 
             {/* Contact Information */}
@@ -171,17 +175,16 @@ export default function Gallery() {
 
             <div className="mt-6">
               <Link
-                href="/contact"
+                href={`/${locale}/contact`}
                 className="text-amber-500 hover:text-amber-400 transition"
               >
-                Contact Us
+                {tNav('contact')}
               </Link>
             </div>
           </div>
           <div className="mt-8 border-t border-neutral-800 pt-8 text-center text-xs">
             <p>
-              &copy; {new Date().getFullYear()} Forever In Your Memory. All
-              rights reserved.
+              &copy; {new Date().getFullYear()} {tFooter('copyright')}
             </p>
           </div>
         </div>

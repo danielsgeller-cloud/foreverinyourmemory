@@ -3,8 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 export default function ContactPage() {
+  const params = useParams();
+  const locale = params.locale as string;
+  const t = useTranslations('contact');
+  const tNav = useTranslations('nav');
+  const tFooter = useTranslations('footer');
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,7 +66,7 @@ export default function ContactPage() {
         <div className="absolute inset-0">
           <Image
             src="/field-soft-repeat.jpg"
-            alt="Contact us"
+            alt={t('hero.title')}
             fill
             priority
             className="object-cover"
@@ -69,10 +77,10 @@ export default function ContactPage() {
         <div className="relative z-10 flex h-full items-center justify-center">
           <div className="mx-auto max-w-4xl px-6 text-center text-white">
             <h1 className="font-serif text-4xl font-bold tracking-tight md:text-6xl">
-              Contact Us
+              {t('hero.title')}
             </h1>
             <p className="mt-4 text-lg text-neutral-100">
-              We're here to help you honor your loved one
+              {t('hero.subtitle')}
             </p>
           </div>
         </div>
@@ -83,19 +91,19 @@ export default function ContactPage() {
         <div className="mx-auto max-w-4xl px-6">
           <div className="rounded-lg bg-white p-8 shadow-lg md:p-12">
             <h2 className="text-center font-serif text-3xl font-semibold text-neutral-900">
-              Get In Touch
+              {t('form.title')}
             </h2>
             <p className="mt-4 text-center text-neutral-600">
-              Fill out the form below and we'll get back to you as soon as possible
+              {t('form.subtitle')}
             </p>
 
             {status === "success" && (
               <div className="mt-6 rounded-lg border border-green-300 bg-green-50 p-4">
                 <p className="text-center font-semibold text-green-900">
-                  Thank you for contacting us!
+                  {t('form.successTitle')}
                 </p>
                 <p className="mt-1 text-center text-sm text-green-800">
-                  We've received your message and will respond shortly.
+                  {t('form.successMessage')}
                 </p>
               </div>
             )}
@@ -103,7 +111,7 @@ export default function ContactPage() {
             {status === "error" && (
               <div className="mt-6 rounded-lg border border-red-300 bg-red-50 p-4">
                 <p className="text-center font-semibold text-red-900">
-                  Error
+                  {t('form.errorTitle')}
                 </p>
                 <p className="mt-1 text-center text-sm text-red-800">
                   {errorMessage}
@@ -118,7 +126,7 @@ export default function ContactPage() {
                     htmlFor="name"
                     className="block text-sm font-medium text-neutral-700"
                   >
-                    Name *
+                    {t('form.name')} {t('form.required')}
                   </label>
                   <input
                     type="text"
@@ -128,7 +136,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     className="mt-1 w-full rounded-md border border-neutral-300 px-4 py-2 text-neutral-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                    placeholder="Your full name"
+                    placeholder={t('form.namePlaceholder')}
                   />
                 </div>
 
@@ -137,7 +145,7 @@ export default function ContactPage() {
                     htmlFor="email"
                     className="block text-sm font-medium text-neutral-700"
                   >
-                    Email *
+                    {t('form.email')} {t('form.required')}
                   </label>
                   <input
                     type="email"
@@ -147,7 +155,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     className="mt-1 w-full rounded-md border border-neutral-300 px-4 py-2 text-neutral-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                    placeholder="your@email.com"
+                    placeholder={t('form.emailPlaceholder')}
                   />
                 </div>
               </div>
@@ -157,7 +165,7 @@ export default function ContactPage() {
                   htmlFor="phone"
                   className="block text-sm font-medium text-neutral-700"
                 >
-                  Phone (optional)
+                  {t('form.phone')}
                 </label>
                 <input
                   type="tel"
@@ -166,7 +174,7 @@ export default function ContactPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="mt-1 w-full rounded-md border border-neutral-300 px-4 py-2 text-neutral-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                  placeholder="(555) 555-5555"
+                  placeholder={t('form.phonePlaceholder')}
                 />
               </div>
 
@@ -175,7 +183,7 @@ export default function ContactPage() {
                   htmlFor="message"
                   className="block text-sm font-medium text-neutral-700"
                 >
-                  Message *
+                  {t('form.message')} {t('form.required')}
                 </label>
                 <textarea
                   id="message"
@@ -185,7 +193,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   className="mt-1 w-full rounded-md border border-neutral-300 px-4 py-2 text-neutral-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                  placeholder="Tell us how we can help you..."
+                  placeholder={t('form.messagePlaceholder')}
                 />
               </div>
 
@@ -195,7 +203,7 @@ export default function ContactPage() {
                   disabled={status === "submitting"}
                   className="inline-block rounded-full bg-amber-500 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-black shadow-lg transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {status === "submitting" ? "Sending..." : "Send Message"}
+                  {status === "submitting" ? t('form.submitting') : t('form.submit')}
                 </button>
               </div>
             </form>
@@ -219,7 +227,7 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="mt-4 font-semibold text-neutral-900">Email Us</h3>
+              <h3 className="mt-4 font-semibold text-neutral-900">{t('info.emailTitle')}</h3>
               <p className="mt-2 text-sm text-neutral-600">
                 <a href="mailto:info@foreverinyourmemory.com" className="text-amber-600 hover:text-amber-700 transition">
                   info@foreverinyourmemory.com
@@ -243,7 +251,7 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="mt-4 font-semibold text-neutral-900">Call Us</h3>
+              <h3 className="mt-4 font-semibold text-neutral-900">{t('info.callTitle')}</h3>
               <p className="mt-2 text-sm text-neutral-600">
                 <a href="tel:7322976008" className="text-amber-600 hover:text-amber-700 transition">
                   (732) 297-6008
@@ -267,11 +275,9 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="mt-4 font-semibold text-neutral-900">Hours</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Monday - Friday: 9:00 AM - 5:00 PM
-                <br />
-                Saturday: By Appointment
+              <h3 className="mt-4 font-semibold text-neutral-900">{t('info.hoursTitle')}</h3>
+              <p className="mt-2 text-sm text-neutral-600 whitespace-pre-line">
+                {t('info.hoursText')}
               </p>
             </div>
           </div>
@@ -282,7 +288,7 @@ export default function ContactPage() {
       <section className="bg-white py-12">
         <div className="text-center">
           <Link
-            href="/"
+            href={`/${locale}`}
             className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-500 transition"
           >
             <svg
@@ -298,7 +304,7 @@ export default function ContactPage() {
                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
               />
             </svg>
-            Back to Home
+            {t('backToHome')}
           </Link>
         </div>
       </section>
@@ -308,14 +314,14 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h3 className="font-serif text-2xl font-semibold text-white">
-              Forever In Your Memory
+              {tNav('siteName')}
             </h3>
             <p className="mt-2 text-sm">
-              Serving families with compassion and dedication
+              {tFooter('tagline')}
             </p>
           </div>
           <div className="mt-8 border-t border-neutral-800 pt-8 text-center text-xs">
-            <p>&copy; {new Date().getFullYear()} Forever In Your Memory. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {tFooter('copyright')}</p>
           </div>
         </div>
       </footer>
