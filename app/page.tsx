@@ -8,8 +8,8 @@ export default function Home() {
       <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/field-sunset-wide.jpg"
-            alt="Memorial landscape at sunset"
+            src="/1000073654.jpg"
+            alt="Memorial monument in peaceful field"
             fill
             priority
             className="object-cover"
@@ -62,8 +62,8 @@ export default function Home() {
             </div>
             <div className="relative h-80 overflow-hidden rounded-lg shadow-xl md:h-96">
               <Image
-                src="/contact-headstone-flowers.jpg"
-                alt="Memorial with flowers"
+                src="/1000072571.jpg"
+                alt="Custom memorial monument with portrait engravings"
                 fill
                 className="object-cover"
               />
@@ -115,16 +115,6 @@ export default function Home() {
 
             <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-neutral-900">
-                Monument Cleaning
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                Professional cleaning and restoration services to maintain the beauty
-                and integrity of existing memorials.
-              </p>
-            </div>
-
-            <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-neutral-900">
                 Cemetery Services
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">
@@ -143,6 +133,27 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          <div className="mt-16 mx-auto max-w-md">
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <Image
+                src="/FB_IMG_1707660593203.jpg"
+                alt="Our Services and Contact Information"
+                width={600}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/gallery"
+              className="inline-block rounded-full border-2 border-amber-500 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-amber-600 transition hover:bg-amber-500 hover:text-white"
+            >
+              View Our Gallery
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -150,7 +161,7 @@ export default function Home() {
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image
-            src="/field-hero.jpg"
+            src="/1000081828.jpg"
             alt="Peaceful memorial landscape"
             fill
             className="object-cover"
