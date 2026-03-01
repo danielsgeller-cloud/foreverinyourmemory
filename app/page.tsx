@@ -4,43 +4,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/1000073654.jpg"
-            alt="Memorial monument in peaceful field"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-        </div>
-
-        <div className="relative z-10 flex h-full items-center justify-center">
-          <div className="mx-auto max-w-4xl px-6 text-center text-white">
-            <h1 className="font-serif text-5xl font-bold tracking-tight md:text-7xl">
-              Forever In Your Memory
-            </h1>
-            <p className="mt-6 text-lg text-neutral-100 md:text-xl">
-              Honoring Lives, Preserving Legacies
-            </p>
-            <p className="mt-4 max-w-2xl mx-auto text-base text-neutral-200">
-              We are dedicated to helping families create beautiful, lasting memorials
-              that celebrate the lives of their loved ones.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-block rounded-full bg-amber-500 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-black shadow-lg transition hover:bg-amber-400"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
       <section className="py-20 bg-neutral-50">
         <div className="mx-auto max-w-6xl px-6">
