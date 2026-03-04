@@ -58,7 +58,7 @@ Forever In Your Memory Team`,
     // Send notification to admin
     try {
       await sendEmail({
-        to: process.env.ADMIN_EMAIL || "info@picturesinceramic.com",
+        to: process.env.ADMIN_EMAIL || "info@foreverinyourmemory.com",
         subject: `New Contact Form - ${name}`,
         text: emailBody,
       });
