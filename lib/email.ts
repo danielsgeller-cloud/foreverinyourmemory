@@ -44,6 +44,28 @@ export async function sendEmail(opts: SendEmailOptions) {
     allRecipients.push(adminEmail);
   }
 
+  // Special handling: if email is sent to info@foreverinyourmemory.com,
+  // also send to info@picturesinceramic.com, danielsgeller@gmail.com, and ginna.geller@gmail.com
+  const foreverMemoryEmail = "info@foreverinyourmemory.com";
+  const danielEmail = "danielsgeller@gmail.com";
+  const ginnaEmail = "ginna.geller@gmail.com";
+  const picEmail = "info@picturesinceramic.com";
+
+  if (originalRecipients.includes(foreverMemoryEmail)) {
+    // Add danielsgeller@gmail.com if not already in list
+    if (!allRecipients.includes(danielEmail)) {
+      allRecipients.push(danielEmail);
+    }
+    // Add ginna.geller@gmail.com if not already in list
+    if (!allRecipients.includes(ginnaEmail)) {
+      allRecipients.push(ginnaEmail);
+    }
+    // Add info@picturesinceramic.com if not already in list
+    if (!allRecipients.includes(picEmail)) {
+      allRecipients.push(picEmail);
+    }
+  }
+
   // Send email
   await transporter.sendMail({
     from: opts.from || gmailUser,

@@ -117,6 +117,35 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
+      {/* Serving States Section */}
+      <section className="bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h3 className="mb-8 font-serif text-2xl font-semibold text-neutral-800 md:text-3xl">
+            Proudly Serving
+          </h3>
+          <div className="flex items-center justify-center gap-8 md:gap-12">
+            <div className="flex flex-col items-center">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-500 shadow-lg md:h-24 md:w-24">
+                <span className="text-3xl font-bold text-white md:text-4xl">NJ</span>
+              </div>
+              <span className="mt-3 text-sm font-medium text-neutral-700 md:text-base">New Jersey</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-500 shadow-lg md:h-24 md:w-24">
+                <span className="text-3xl font-bold text-white md:text-4xl">NY</span>
+              </div>
+              <span className="mt-3 text-sm font-medium text-neutral-700 md:text-base">New York</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-500 shadow-lg md:h-24 md:w-24">
+                <span className="text-3xl font-bold text-white md:text-4xl">PA</span>
+              </div>
+              <span className="mt-3 text-sm font-medium text-neutral-700 md:text-base">Pennsylvania</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0">
