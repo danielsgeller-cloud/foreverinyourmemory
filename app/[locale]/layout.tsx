@@ -33,9 +33,25 @@ export default async function LocaleLayout({
           <nav className="bg-neutral-900 text-white">
             <div className="mx-auto max-w-6xl px-6 py-4">
               <div className="flex items-center justify-between">
-                <Link href={`/${locale}`} className="font-serif text-xl font-semibold hover:text-amber-400 transition">
-                  {locale === 'ru' ? 'Навечно в Вашей Памяти' : locale === 'uk' ? 'Назавжди у Вашій Пам\'яті' : 'Forever In Your Memory'}
-                </Link>
+                <div className="flex items-center gap-6">
+                  <Link href={`/${locale}`} className="font-serif text-xl font-semibold hover:text-amber-400 transition">
+                    {locale === 'ru' ? 'Навечно в Вашей Памяти' : locale === 'uk' ? 'Назавжди у Вашій Пам\'яті' : 'Forever In Your Memory'}
+                  </Link>
+                  <div className="hidden md:flex items-center gap-2 text-xs text-neutral-400 border-l border-neutral-700 pl-6">
+                    <span className="font-medium">Serving:</span>
+                    <div className="flex items-center gap-2">
+                      <span className="flex items-center gap-1">
+                        <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-amber-500 text-[9px] font-bold text-white">NJ</span>
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-amber-500 text-[9px] font-bold text-white">NY</span>
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-amber-500 text-[9px] font-bold text-white">PA</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div className="flex gap-4 items-center">
                   <Link
                     href={`/${locale}/gallery`}
