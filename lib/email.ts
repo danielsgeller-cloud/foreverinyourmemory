@@ -10,12 +10,12 @@ type SendEmailOptions = {
 };
 
 export async function sendEmail(opts: SendEmailOptions) {
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
-  const adminEmail = process.env.ADMIN_EMAIL;
+  const gmailUser = process.env.FIYM_GMAIL_USER;
+  const gmailAppPassword = process.env.FIYM_GMAIL_APP_PASSWORD;
+  const adminEmail = process.env.FIYM_ADMIN_EMAIL;
 
   if (!gmailUser || !gmailAppPassword) {
-    console.error("CRITICAL: Missing GMAIL_USER or GMAIL_APP_PASSWORD");
+    console.error("CRITICAL: Missing FIYM_GMAIL_USER or FIYM_GMAIL_APP_PASSWORD");
     throw new Error("Email service not configured");
   }
 
