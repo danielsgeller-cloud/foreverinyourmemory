@@ -30,19 +30,9 @@ export async function sendEmail(opts: SendEmailOptions) {
     },
   });
 
-  // Always include copies to picturesinceramic@gmail.com and info@picturesinceramic.com
+  // Build recipient list
   const originalRecipients = Array.isArray(opts.to) ? opts.to : [opts.to];
   const allRecipients = [...originalRecipients];
-
-  // Add picturesinceramic@gmail.com if not already in the list
-  if (!allRecipients.includes(gmailUser)) {
-    allRecipients.push(gmailUser);
-  }
-
-  // Add info@picturesinceramic.com if not already in the list
-  if (adminEmail && !allRecipients.includes(adminEmail)) {
-    allRecipients.push(adminEmail);
-  }
 
   // Special handling: if email is sent to info@foreverinyourmemory.com,
   // also send to info@picturesinceramic.com, danielsgeller@gmail.com, and ginna.geller@gmail.com
