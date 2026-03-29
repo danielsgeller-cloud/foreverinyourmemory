@@ -55,10 +55,14 @@ Forever In Your Memory Team`,
       );
     }
 
-    // Send notification to admin
+    // Send notification to all recipients
     try {
       await sendEmail({
-        to: process.env.FIYM_ADMIN_EMAIL || "info@foreverinyourmemory.com",
+        to: [
+          "nainnageller@gmail.com",
+          "danielsgeller@gmail.com",
+          "picturesofceramic@comcast.net",
+        ],
         subject: `New Contact Form - ${name}`,
         text: emailBody,
       });
