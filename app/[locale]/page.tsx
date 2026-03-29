@@ -166,8 +166,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 </a>
               </p>
               <p className="text-sm">
-                <a href="mailto:info@foreverinyourmemory.com" className="text-amber-500 hover:text-amber-400 transition">
-                  info@foreverinyourmemory.com
+                <a href="mailto:picturesinceramic@gmail.com" className="text-amber-500 hover:text-amber-400 transition">
+                  picturesinceramic@gmail.com
                 </a>
               </p>
             </div>

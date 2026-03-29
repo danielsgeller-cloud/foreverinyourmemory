@@ -229,8 +229,8 @@ export default function ContactPage() {
               </div>
               <h3 className="mt-4 font-semibold text-neutral-900">{t('info.emailTitle')}</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                <a href="mailto:info@foreverinyourmemory.com" className="text-amber-600 hover:text-amber-700 transition">
-                  info@foreverinyourmemory.com
+                <a href="mailto:picturesinceramic@gmail.com" className="text-amber-600 hover:text-amber-700 transition">
+                  picturesinceramic@gmail.com
                 </a>
               </p>
             </div>
