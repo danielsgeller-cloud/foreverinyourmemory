@@ -165,10 +165,10 @@ export default async function Gallery({ params }: { params: Promise<{ locale: st
               </p>
               <p className="text-sm">
                 <a
-                  href="mailto:picturesinceramic@gmail.com"
+                  href="mailto:info@foreverinyourmemory.com"
                   className="text-amber-500 hover:text-amber-400 transition"
                 >
-                  picturesinceramic@gmail.com
+                  info@foreverinyourmemory.com
                 </a>
               </p>
             </div>
